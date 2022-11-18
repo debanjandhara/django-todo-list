@@ -1,0 +1,362 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Signika+Negative:wght@500&display=swap');
+
+:root {
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --gray-100: #f8f9fa;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-400: #ced4da;
+    --gray-500: #adb5bd;
+    --gray-600: #6c757d;
+    --gray-700: #495057;
+    --gray-800: #343a40;
+    --gray-900: #212529;
+    --primary: #0d6efd;
+    --secondary: #6c757d;
+    --success: #198754;
+    --info: #0dcaf0;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #ffffff38;
+    --dark: #212529;
+    --primary-background: #cfe2ff;
+    --dark-pink: #f14182;
+    --light-pink: #f16498;
+}
+
+body{
+    background-image: url('../img/gradient.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+.textInput {
+    background-color: #ffffff00;
+}
+
+.form-submit button {
+    background-color: #ffffff00;
+}
+
+input, textarea {
+    background-color: #ffffff38;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    padding: 5px 5px 5px 5px;
+}
+
+.glassmorphism {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 1rem 1rem 1rem;
+    margin-top: 1rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1%;
+}
+.navbar p, a {
+    font-size: large;
+}
+.navbar ul {
+    display: flex;
+}
+
+/* ------------------------------------- Link Hover Effect ------------------------------ */
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+main div {
+    margin: 1rem 2rem;
+}
+main div a {
+    --color: #646b8c;
+    position: relative;
+    text-decoration: none;
+    color: var(--color);
+    font-family: "Inter", sans-serif;
+    padding: 0.2rem 0;
+}
+main div a::before {
+    --line-width: 115%;
+    --line-height: 1px;
+    --line-easing: ease;
+    --line-transition-duration: 300ms;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: var(--line-width);
+    height: var(--line-height);
+    transform-origin: right;
+    transform: scaleX(0);
+    background: var(--color);
+    transition: transform var(--line-transition-duration) var(--line-easing);
+    z-index: 1;
+}
+main div a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+main div a:hover span {
+    --deg: -45deg;
+}
+main div a:hover span::before {
+    transform: rotate(var(--deg));
+}
+main div a:hover span::after {
+    transform: translateX(-1px) rotate(var(--deg));
+}
+main div a span {
+    --line-arrow-width: 1px;
+    --line-arrow-height: 6px;
+    --line-arrow-easing: cubic-bezier(0.3, 1.5, 0.5, 1);
+    --line-arrow-transition-duration: 200ms;
+    --line-arrow-transition-delay: 240ms;
+}
+main div a span::before, main div a span::after {
+    content: "";
+    position: absolute;
+    right: -18%;
+    bottom: 0px;
+    background: var(--color);
+    transition: transform var(--line-arrow-transition-duration) var(--line-arrow-easing);
+    transition-delay: var(--line-arrow-transition-delay);
+    z-index: 2;
+}
+main div a span::before {
+    width: var(--line-arrow-width);
+    height: var(--line-arrow-height);
+    transform-origin: 0% 100%;
+    transform: rotate(-90deg);
+}
+main div a span::after {
+    height: var(--line-arrow-width);
+    width: var(--line-arrow-height);
+    transform-origin: 100% 0%;
+    transform: translateX(-1px) rotate(0deg);
+}
+
+
+/* ------------------------------------- Create Todo Form ------------------------------- */
+
+.container {
+    margin: auto;
+    margin-top: 2rem;
+    /* border: 1px solid black; */
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    /* backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+#welcome-user {
+    font-size: large;
+
+}
+.container-section {
+    /* border: 1px solid blue; */
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-section .create-todo-form {
+    /* border: 2px solid yellowgreen; */
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    margin-left: 5%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Glassmorphism Effect by Me*/
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    /* backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.create-todo-form input {
+    width: 300px;
+    height: 35px;
+    border: 2px solid gray;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+.create-todo-form button {
+    width: 100px;
+    height: 35px;
+    color:var(--primary);
+    background-color: var(--light);
+    border: 2px solid var(--primary);
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.create-todo-form button:hover {
+    width: 100px;
+    height: 35px;
+    background-color:var(--primary);
+    color: var(--light);
+    border: 2px solid var(--primary);
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.todo-container {
+    /* border: 2px solid var(--gray-dark); */
+    /* box-shadow: rgba(0, 0, 0, 0.411) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; */
+    /* background-color: pink; */
+    width: 50%;
+    margin: 0 0 15px 27.5%;
+
+    /* Glassmorphism Effect by Me*/
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    /* backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+}
+
+.todos {
+    /* border: 2px solid rgb(223, 247, 7); */
+    padding: 2%;
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.todos p {
+    font-size: medium;
+    font-weight: 800;
+    color: rgb(31, 29, 29);
+}
+.todos li {
+    display: inline-flex;
+}
+.todos a:link {
+    font-size: medium;
+    text-decoration: none;
+}
+
+.crud-buttons #edit-todo {
+    width: 60px;
+    background-color: #ffffff33;
+    color: var(--success);
+    border: 1px solid var(--success);
+    border-radius: 3px;
+    padding: 0 2px;
+}
+.crud-buttons #edit-todo:hover {
+    width: 60px;
+    color: #fff;
+    background-color: var(--success);
+    border: 1px solid var(--success);
+    border-radius: 3px;
+    padding: 0 2px;
+}
+
+.crud-buttons #complete-todo {
+    width: 95px;
+    background-color: #ffffff33;
+    color: var(--gray-dark);
+    border: 1px solid var(--gray-dark);
+    border-radius: 3px;
+    padding: 0 2px;
+}
+.crud-buttons #complete-todo:hover {
+    width: 95px;
+    color: #fff;
+    background-color: var(--gray-dark);
+    border: 1px solid var(--gray-dark);
+    border-radius: 3px;
+    padding: 0 2px;
+}
+
+.crud-buttons #delete-todo {
+    width: 65px;
+    background-color: #ffffff33;
+    color: var(--danger);
+    border: 1px solid var(--danger);
+    border-radius: 3px;
+    padding: 0 2px;
+}
+.crud-buttons #delete-todo:hover {
+    width: 65px;
+    color: #fff;
+    background-color: var(--danger);
+    border: 1px solid var(--danger);
+    border-radius: 3px;
+}
+
+
+.close {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    /* backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 1rem 1rem 1rem;
+    margin-top: 1rem;
+
+}
+#close-edit-modal {
+    padding: 2px 7px !important;
+    /* background-color: var(--light); */
+    border: 0;
+}
+.modal-footerr {
+    width: 100%;
+    display: flex;
+    margin-left: 90%;
+}
+.modal-footerr buttons {
+    display: inline-flex;
+    /* width: 20%; */
+}
+#edit-todo-submit {
+    width: 50%;
+    margin-left: 10px;
+}
+
+/* ------------------ Page Navigation ------------------------- */
+
+nav .page-item {
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+    margin: 0 1px;
+}
